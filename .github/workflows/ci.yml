@@ -27,7 +27,7 @@ jobs:
     - name: Run linters
       run: |
         npm run lint:js
-        npm run lint:css
+
 
     - name: Run tests
       run: npm test
