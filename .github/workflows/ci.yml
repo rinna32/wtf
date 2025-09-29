@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - 'feature/**'
+      - "feature/**"
   pull_request:
     branches:
       - main
@@ -14,20 +14,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run linters
-      run: |
-        npm run lint:js
+      - name: Run linters
+        run: |
+          npm run lint:js
 
-
-    - name: Run tests
-      run: npm test
+      - name: Run tests
+        run: npm test

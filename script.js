@@ -1,18 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const items = {
-    "Сумки": {
+    Сумки: {
       img: "img/Без названия (3).jpg",
-      text: "Сумки в стиле NeoGoth – сочетание кожи, цепей и мистических символов."
+      text: "Сумки в стиле NeoGoth – сочетание кожи, цепей и мистических символов.",
     },
-    "Украшения": {
+    Украшения: {
       img: "img/Gothic bracelet set.jpg",
-      text: "Украшения дарят ауру мистики: кольца, браслеты и кулоны с готическим вайбом."
+      text: "Украшения дарят ауру мистики: кольца, браслеты и кулоны с готическим вайбом.",
     },
-    "Одежда": {
+    Одежда: {
       img: "img/Без названия (2).jpg",
-      text: "Одежда в духе Дарк Дива – черные платья, кружева и смелые силуэты."
-    }
+      text: "Одежда в духе Дарк Дива – черные платья, кружева и смелые силуэты.",
+    },
   };
 
   const buttons = document.querySelectorAll(".item button");
@@ -22,8 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalText = document.getElementById("modal-text");
   const closeBtn = document.querySelector(".close");
 
-
-  buttons.forEach(button => {
+  buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const category = button.innerText;
       const data = items[category];
@@ -36,11 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
   closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
   });
-
 
   window.addEventListener("click", (e) => {
     if (e.target === modal) {
