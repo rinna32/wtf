@@ -10,29 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Клонируем репозиторий
+      
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Настройка Node.js
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
 
-      # 3. Установка зависимостей
+      
       - name: Install dependencies
         run: npm ci
 
-      # 4. Проверка кода линтером
+      
       - name: Run linters
         run: npm run lint
 
-      # 5. Сборка проекта
+      
       - name: Build project
         run: npm run build
 
-      # 6. Деплой на GitHub Pages
+      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
